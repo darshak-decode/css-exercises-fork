@@ -8,6 +8,7 @@ body {
   font-weight: 800;
 }
 
+ /* alternative is to move small-para to after .para so the later wins or add .para(class) before small-para so it would have more specificity. */
 p.small-para {
   font-size: 14px;
   font-weight: 800;
@@ -17,17 +18,27 @@ p.small-para {
   font-size: 22px;
 }
 
+/* alternative is two add .button to .button(class) or just button(type selector) rather than moving it after .button or make it the id by adding #*/
+.button {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+}
+
 .confirm {
   background: green;
   color: white;
   font-weight: bold;
 } 
 
-.button {
-  background-color: rgb(255, 255, 255);
+/* adding "."" before div.text wont work because it will win over the text size also and removing div from div.text also wont work because it wins and it also changes the font weight to 100 to all as it comes later. to make it work move .text to before .child*/
+
+.text {
   color: rgb(0, 0, 0);
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 100;
 }
+
 
 .child {
   color: rgb(0, 0, 0);
@@ -35,8 +46,3 @@ p.small-para {
   font-size: 14px;
 }
 
-div.text {
-  color: rgb(0, 0, 0);
-  font-size: 22px;
-  font-weight: 100;
-}
